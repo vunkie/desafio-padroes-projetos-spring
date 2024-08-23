@@ -20,7 +20,7 @@ public class ClienteRestController {
         return ResponseEntity.ok(clienteService.findAll());
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Cliente> findById(@PathVariable Long id) {
         return ResponseEntity.ok(clienteService.findById(id));
     }
@@ -31,13 +31,13 @@ public class ClienteRestController {
         return ResponseEntity.ok(cliente);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Cliente> update(@PathVariable Long id, @RequestBody Cliente cliente) {
         clienteService.update(id, cliente);
         return ResponseEntity.ok(cliente);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         clienteService.delete(id);
         return ResponseEntity.ok().build();
